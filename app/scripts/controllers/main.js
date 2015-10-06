@@ -7,7 +7,7 @@
  * # MainCtrl
  * Controller of the yoApp
  */
-angular.module('yoApp')
+angular.module('migrateApp')
   .controller('MainCtrl', function ($scope) {
     $scope.controllerName = 'MainController';
   });

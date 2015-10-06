@@ -1,21 +1,12 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name yoApp
- * @description
- * # yoApp
- *
- * Main module of the application.
- */
-angular
-  .module('yoApp', [
+module.exports = angular.module('migrateApp', [
     'ngAnimate',
-    'ngCookies',
+    //'ngCookies',
     'ngResource',
     'ngRoute',
-    'ngSanitize',
-    'ngTouch',
+    //'ngSanitize',
+    //'ngTouch',
     'suggestionModule'
   ])
   .config(function ($routeProvider) {

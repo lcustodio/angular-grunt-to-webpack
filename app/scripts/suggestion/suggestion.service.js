@@ -1,5 +1,7 @@
 'use strict';
 
+require('./suggestion.service');
+
 angular.module('suggestionModule').factory('suggestionService', [
         '$q',
         function ($q) {

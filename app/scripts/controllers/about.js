@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the yoApp
  */
-angular.module('yoApp')
+angular.module('migrateApp')
   .controller('AboutCtrl', function ($scope) {
         $scope.controllerName = 'AboutController';
   });

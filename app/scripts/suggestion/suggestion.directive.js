@@ -1,10 +1,13 @@
 'use strict';
 
+require('./suggestion.service');
+require('./suggestionList.html');
+
 angular.module('suggestionModule').directive('suggestionList', [
         'suggestionService',
         function (suggestionService) {
             return {
-                templateUrl: '/scripts/suggestion/suggestionList.html',
+                template: require('./suggestionList.html'), //TODO this is a big change!
                 controller: function($scope){
                     suggestionService.loadSuggestions().then(function(result){
                         $scope.list = result;
