@@ -12,12 +12,12 @@ module.exports = angular.module('migrateApp', [
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'home/main.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
       .when('/about', {
-        templateUrl: 'views/about.html',
+        templateUrl: 'home/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })

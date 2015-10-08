@@ -38,19 +38,23 @@
             <ul class="nav navbar-nav">
               <li class="active"><a href="#/">Home</a></li>
               <li><a ng-href="#/about">Routing</a></li>
+
+                <li><a ng-href="#/dashboard">Dashboard</a></li>
+
             </ul>
           </div>
         </div>
       </div>
     </div>
 
-    <p>Angular is working: {{1 + 1 === 2}}</p>
+    <div>Angular is working: {{1 + 1 === 2}}</div>
 
     <div class="container">
     <div ng-view=""></div>
     </div>
 
-    <script src="../dist/bundle.js"></script>
+    <script src="./build/common.js"></script>
+    <script src="./build/main.js"></script>
 
     <!--&lt;!&ndash; build:js(.) scripts/vendor.js &ndash;&gt;-->
     <!--&lt;!&ndash; bower:js &ndash;&gt;-->

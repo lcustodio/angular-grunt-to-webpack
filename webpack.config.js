@@ -1,16 +1,17 @@
 var
     path = require("path"),
-    webpack = require("webpack"),
+    //webpack = require("webpack"),
     APP = __dirname + '/app';
 
-//console.log(path.join(__dirname, "bower_components"));
-
 module.exports = {
-    context: __dirname + "/app", //APP
-    entry: './scripts/bootstrap.js',
+    context: APP,
+    entry: {
+        main: ['./scripts/bootstrap.js'],
+        dashboard: ['.scripts/dashboard.js']
+    },
     output: {
-        path: __dirname + "/dist",
-        filename: "bundle.js"
+        path: APP + '/build',  //__dirname + "/dist",
+        filename: "[name].js"
     },
     module: {
         loaders: [
@@ -32,11 +33,11 @@ module.exports = {
                 test: /\.css$/,
                 loader: "style!css"
             },
-            //{
-            //    test: /\.js$/,
-            //    loader: 'jshint',
-            //    exclude: /node_modules|bower_components/
-            //},
+            {
+                test: /\.js$/,
+                loader: 'ng-annotate!jshint',
+                exclude: /node_modules|bower_components/
+            },
             {
                 test: /\.(woff|woff2|ttf|eot|svg)(\?]?.*)?$/,
                 loader : 'file-loader?name=res/[name].[ext]?[hash]'
@@ -56,8 +57,9 @@ module.exports = {
         root: [APP, path.join(__dirname, "bower_components")]
     },
     plugins: [
-        new webpack.ResolverPlugin(
-            new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
-        )
+        new webpack.optimize.CommonsChunkPlugin('common.js')
+    //    new webpack.ResolverPlugin(
+    //        new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
+    //    )
     ]
 };
